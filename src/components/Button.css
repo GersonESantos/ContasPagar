@@ -1,0 +1,61 @@
+.custom-btn {
+    position: relative;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+    font-family: 'Inter', sans-serif;
+}
+
+.custom-btn.primary {
+    background: var(--destaque);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.custom-btn.primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+
+.custom-btn.outline {
+    background: transparent;
+    border: 2px solid var(--destaque);
+    color: var(--destaque);
+}
+
+.custom-btn.outline:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.btn-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.custom-btn:hover .btn-glow {
+    transform: scale(1);
+    animation: rotateGlow 2s linear infinite;
+}
+
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
